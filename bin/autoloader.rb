@@ -262,20 +262,14 @@ module MyCapybaraTest
           sleep 1
           resulting_string = "                                        #{result('EC',string_before,string_after)} #{result('LC',string_before,string_after)} #{result('IC',string_before,string_after)}"
           string_for_log = case
-            when resulting_string == "                                        10 EC  " then "10%"
-            when resulting_string == "                                        15 EC 15 LC " then "15%"  
-            when resulting_string == "                                        20 EC 5 LC 5 IC" then "20%"  
-            when resulting_string == "                                        20 EC 19 LC " then "25 - without IC%" 
-            when resulting_string == "                                        25 EC 7 LC 7 IC" then "25%"   
-            when resulting_string == "                                        30 EC 20 LC 10 IC" then "30%"    
-            when resulting_string == "                                        30 EC 30 LC " then "30 - without IC%"     
-            when resulting_string == "                                        45 EC 30 LC 20 IC" then "45%"  
-            when resulting_string == "                                        45 EC 50 LC " then "45 - without IC%"    
-            when resulting_string == "                                        50 EC 35 LC 20 IC" then "50%"    
-            when resulting_string == "                                        50 EC 55 LC " then "50% - without IC"   
-            when resulting_string == "                                        75 EC 40 LC 25 IC" then "75%"  
-            when resulting_string == "                                        90 EC 90 LC " then "100% - without IC"   
-            when resulting_string == "                                        100 EC 50 LC 30 IC" then "100%"    
+            when resulting_string == "                                        18 EC 17 LC " then "FOUR_WORDS - without IC%"     
+            when resulting_string == "                                        25 EC  10 IC" then "FOUR_WORDS"  
+            when resulting_string == "                                        35 EC 35 LC " then "THREE_WORDS - without IC%"    
+            when resulting_string == "                                        50 EC 10 LC 10 IC" then "THREE_WORDS"    
+            when resulting_string == "                                        75 EC 75 LC " then "TWO_WORDS - without IC"   
+            when resulting_string == "                                        100 EC 25 LC 25 IC" then "TWO_WORDS"  
+            when resulting_string == "                                        90 EC 90 LC " then "ONE_WORD - without IC"   
+            when resulting_string == "                                        130 EC 30 LC 20 IC" then "ONE_WORD"    
           else
               "Attention" 
           end 
